@@ -20,7 +20,7 @@ COPY . .
 RUN cargo build --release --target x86_64-unknown-linux-musl
 RUN musl-strip /s3-cdn/target/x86_64-unknown-linux-musl/release/s3-cdn
 
-FROM ubuntu:latest@sha256:f9d633ff6640178c2d0525017174a688e2c1aef28f0a0130b26bd5554491f0da AS ubuntu
+FROM ubuntu:latest@sha256:77906da86b60585ce12215807090eb327e7386c8fafb5402369e421f44eff17e AS ubuntu
 RUN addgroup --gid 8779 server && useradd -g 8779 -M -u 8779 -s /usr/sbin/nologin server
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 RUN update-ca-certificates
