@@ -1,6 +1,6 @@
 [package]
 name = "s3-cdn"
-version = "0.1.0"
+version = "0.1.0" # managed by release.sh
 edition = "2021"
 authors = ["Scotte Zinn <scotte@zinn.ca>"]
 license = "MIT"
@@ -8,6 +8,7 @@ homepage = "https://github.com/szinn/s3-cdn"
 repository = "https://github.com/szinn/s3-cdn"
 readme = "README.md"
 rust-version = "1.77"
+build = "build.rs"
 
 [[bin]]
 name = "s3-cdn"
@@ -19,3 +20,48 @@ path = "src/lib.rs"
 
 [dependencies]
 anyhow = "1.0.81"
+async-trait = "0.1.77"
+axum = "0.7.4"
+config = "0.14.0"
+log = "0.4.21"
+minio = "0.1.0"
+thiserror = "1.0.57"
+tokio-graceful-shutdown = "0.14.3"
+tracing-log = "0.2.0"
+
+[dependencies.clap]
+version = "4.5.1"
+features = ["cargo", "derive"]
+
+[dependencies.hyper]
+version = "1.2.0"
+features = ["full"]
+
+[dependencies.hyper-util]
+version = "0.1"
+features = ["tokio", "server-auto", "http1"]
+
+[dependencies.serde]
+version = "1.0.197"
+features = ["derive"]
+
+[dependencies.tokio]
+version = "1.36.0"
+default-features = false
+features = ["full"]
+
+[dependencies.tower]
+version = "0.4.13"
+features = ["util"]
+
+[dependencies.tower-http]
+version = "0.5.2"
+features = ["timeout", "trace"]
+
+[dependencies.tracing]
+version = "0.1.40"
+features = ["log"]
+
+[dependencies.tracing-subscriber]
+version = "0.3.18"
+features = ["std", "fmt", "registry", "env-filter", "json"]
