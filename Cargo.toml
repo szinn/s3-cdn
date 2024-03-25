@@ -21,7 +21,7 @@ path = "src/lib.rs"
 [dependencies]
 anyhow = "1.0.81"
 async-trait = "0.1.77"
-axum = "0.7.4"
+axum = "0.7.5"
 config = "0.14.0"
 log = "0.4.21"
 minio = "0.1.0"
