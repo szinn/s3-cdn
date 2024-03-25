@@ -30,7 +30,7 @@ tokio-graceful-shutdown = "0.14.3"
 tracing-log = "0.2.0"
 
 [dependencies.clap]
-version = "4.5.1"
+version = "4.5.3"
 features = ["cargo", "derive"]
 
 [dependencies.hyper]
