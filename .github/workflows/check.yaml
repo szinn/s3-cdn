@@ -21,7 +21,7 @@ jobs:
         run: |
           sudo apt-get -qq update && \
           sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
           submodules: false
       - name: Install stable
@@ -46,7 +46,7 @@ jobs:
         run: |
           sudo apt-get -qq update && \
           sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
           submodules: false
       - name: Install ${{ matrix.toolchain }}
@@ -55,7 +55,7 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
           components: clippy
       - name: cargo clippy
-        uses: actions-rs/clippy-check@v1
+        uses: actions-rs/clippy-check@b5b5f21f4797c02da247df37026fcd0a5024aa4d # v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
   # doc:
@@ -84,7 +84,7 @@ jobs:
         run: |
           sudo apt-get -qq update && \
           sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
           submodules: false
       - name: Install stable
