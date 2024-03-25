@@ -1,4 +1,4 @@
-FROM messense/rust-musl-cross:x86_64-musl@sha256:b70411ff08096d628f44dbadebc18ec5e047799a0a936bd31988ab8cd813836f as chef
+FROM messense/rust-musl-cross:x86_64-musl@sha256:9bf63830ce63649fb54995c5fbbd36b993535208000909ad4f9993bf6e168154 as chef
 ENV SQLX_OFFLINE=true
 RUN cargo install cargo-chef
 RUN apt-get update && apt-get install -y protobuf-compiler libssl-dev
