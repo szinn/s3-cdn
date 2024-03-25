@@ -1,0 +1,28 @@
+---
+version: "3"
+
+vars:
+  PROJECT_DIR:
+    sh: "git rev-parse --show-toplevel"
+
+includes:
+  pc: .taskfiles/pre-commit.yaml
+
+tasks:
+  test:
+    desc: Run all tests
+    cmds:
+      - cargo test --locked --all-features --all-targets
+      - cargo test --locked --all-features --doc
+
+  format:
+    desc: Format all files
+    cmds:
+      - cargo fmt
+      - prettier -w .
+
+  doc:
+    desc: Create cargo docs
+    cmds:
+      - rm -rf target/doc
+      - cargo doc --no-deps --open

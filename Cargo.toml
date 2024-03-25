@@ -1,0 +1,21 @@
+[package]
+name = "s3-cdn"
+version = "0.1.0"
+edition = "2021"
+authors = ["Scotte Zinn <scotte@zinn.ca>"]
+license = "MIT"
+homepage = "https://github.com/szinn/s3-cdn"
+repository = "https://github.com/szinn/s3-cdn"
+readme = "README.md"
+rust-version = "1.77"
+
+[[bin]]
+name = "s3-cdn"
+path = "src/main.rs"
+
+[lib]
+name = "s3_cdn"
+path = "src/lib.rs"
+
+[dependencies]
+anyhow = "1.0.81"
