@@ -1,4 +1,4 @@
-FROM fedora:38 as chef
+FROM fedora:41 as chef
 WORKDIR /build
 
 # compile openssl for static linking

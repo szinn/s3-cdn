@@ -20,17 +20,17 @@ path = "src/lib.rs"
 
 [dependencies]
 anyhow = "1.0.81"
-async-trait = "0.1.77"
+async-trait = "0.1.79"
 axum = "0.7.5"
 config = "0.14.0"
 log = "0.4.21"
 minio = "0.1.0"
-thiserror = "1.0.57"
+thiserror = "1.0.58"
 tokio-graceful-shutdown = "0.14.3"
 tracing-log = "0.2.0"
 
 [dependencies.clap]
-version = "4.5.1"
+version = "4.5.3"
 features = ["cargo", "derive"]
 
 [dependencies.hyper]
