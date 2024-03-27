@@ -21,16 +21,18 @@ path = "src/lib.rs"
 [dependencies]
 anyhow = "1.0.81"
 async-trait = "0.1.79"
-axum = "0.7.4"
+axum = "0.7.5"
+bytes = "1.6.0"
 config = "0.14.0"
 log = "0.4.21"
+mime_guess = "2.0.4"
 minio = "0.1.0"
 thiserror = "1.0.58"
 tokio-graceful-shutdown = "0.14.3"
 tracing-log = "0.2.0"
 
 [dependencies.clap]
-version = "4.5.3"
+version = "4.5.4"
 features = ["cargo", "derive"]
 
 [dependencies.hyper]
@@ -40,6 +42,10 @@ features = ["full"]
 [dependencies.hyper-util]
 version = "0.1"
 features = ["tokio", "server-auto", "http1"]
+
+[dependencies.reqwest]
+version = "0.12.2"
+features = ["native-tls", "blocking", "rustls-tls", "stream"]
 
 [dependencies.serde]
 version = "1.0.197"

@@ -65,7 +65,13 @@ async fn main() -> Result<()> {
             config.port = Some(cli.port.unwrap_or(config.port.unwrap_or(8080)));
 
             let server = {
-                let store = Arc::new(S3Store::new());
+                let store = Arc::new(S3Store::new(
+                    &config.host,
+                    &config.region,
+                    &config.bucket,
+                    &config.access_key_id,
+                    &config.secret_access_key,
+                ));
                 let server = Arc::new(Server::new(store));
                 let frontend = HttpFrontend::new(config.port.unwrap(), server);
                 Toplevel::new(|s| async move {

@@ -1,4 +1,9 @@
 use async_trait::async_trait;
+use bytes::Bytes;
+
+use crate::error::Error;
 
 #[async_trait]
-pub trait DocumentService: Send + Sync {}
+pub trait DocumentService: Send + Sync {
+    async fn get_object(&self, path: &str) -> Result<Bytes, Error>;
+}

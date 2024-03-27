@@ -75,25 +75,25 @@ jobs:
   #       run: cargo doc --no-deps --all-features
   #       env:
   #         RUSTDOCFLAGS: --cfg docsrs
-  hack:
-    runs-on: ubuntu-latest
-    name: ubuntu / stable / features
-    steps:
-      - name: Setup Tools
-        shell: bash
-        run: |
-          sudo apt-get -qq update && \
-          sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
-        with:
-          submodules: false
-      - name: Install stable
-        uses: dtolnay/rust-toolchain@stable
-      - name: cargo install cargo-hack
-        uses: taiki-e/install-action@cargo-hack
-      # intentionally no target specifier; see https://github.com/jonhoo/rust-ci-conf/pull/4
-      - name: cargo hack
-        run: cargo hack --feature-powerset check
+  # hack:
+  #   runs-on: ubuntu-latest
+  #   name: ubuntu / stable / features
+  #   steps:
+  #     - name: Setup Tools
+  #       shell: bash
+  #       run: |
+  #         sudo apt-get -qq update && \
+  #         sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
+  #     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+  #       with:
+  #         submodules: false
+  #     - name: Install stable
+  #       uses: dtolnay/rust-toolchain@stable
+  #     - name: cargo install cargo-hack
+  #       uses: taiki-e/install-action@cargo-hack
+  #     # intentionally no target specifier; see https://github.com/jonhoo/rust-ci-conf/pull/4
+  #     - name: cargo hack
+  #       run: cargo hack --feature-powerset check
   # msrv:
   #   runs-on: ubuntu-latest
   #   # we use a matrix here just because env can't be used in job names

@@ -1,10 +1,9 @@
-use std::{net::SocketAddr, sync::Arc, time::Duration};
+use std::{net::SocketAddr, sync::Arc};
 
 use axum::{
     extract::Request,
     http::StatusCode,
     response::{IntoResponse, Response},
-    routing::get,
     Router,
 };
 use hyper::body::Incoming;
@@ -12,13 +11,15 @@ use hyper_util::rt::TokioIo;
 use tokio::net::{TcpListener, TcpStream};
 use tokio_graceful_shutdown::{SubsystemBuilder, SubsystemHandle};
 use tower::Service;
-use tower_http::timeout::TimeoutLayer;
 
 use crate::{core::document_service::DocumentService, error::Error};
 
+pub mod handlers;
+
+#[derive(Clone)]
 pub struct HttpFrontend {
     port: u16,
-    document_service: Arc<dyn DocumentService>,
+    pub document_service: Arc<dyn DocumentService>,
 }
 
 impl HttpFrontend {
@@ -86,18 +87,4 @@ impl IntoResponse for Error {
     fn into_response(self) -> Response {
         (StatusCode::INTERNAL_SERVER_ERROR, format!("Something went wrong: {}", self)).into_response()
     }
-}
-
-impl HttpFrontend {
-    fn get_routes(self) -> Router<()> {
-        axum::Router::new()
-            .route("/health", get(health))
-            .with_state(self.document_service.clone())
-            .layer(TimeoutLayer::new(Duration::from_secs(2)))
-    }
-}
-
-#[tracing::instrument(level = "trace")]
-async fn health() -> impl IntoResponse {
-    StatusCode::OK
 }
