@@ -38,7 +38,7 @@ fn determine_content_type(path: &str, is_ascii: bool) -> String {
         if is_ascii {
             "text/plain".to_string()
         } else {
-            "image/png".to_string() // "application/octet-stream".to_string()
+            "application/octet-stream".to_string()
         }
     } else {
         mime_guess.first().unwrap().to_string()
