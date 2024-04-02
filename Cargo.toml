@@ -1,6 +1,6 @@
 [package]
 name = "s3-cdn"
-version = "0.2.0" # managed by release.sh
+version = "0.3.0" # managed by release.sh
 edition = "2021"
 authors = ["Scotte Zinn <scotte@zinn.ca>"]
 license = "MIT"
