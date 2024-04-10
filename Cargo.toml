@@ -19,7 +19,7 @@ name = "s3_cdn"
 path = "src/lib.rs"
 
 [dependencies]
-anyhow = "1.0.81"
+anyhow = "1.0.82"
 async-trait = "0.1.79"
 axum = "0.7.5"
 bytes = "1.6.0"
