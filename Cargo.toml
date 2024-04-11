@@ -20,7 +20,7 @@ path = "src/lib.rs"
 
 [dependencies]
 anyhow = "1.0.82"
-async-trait = "0.1.79"
+async-trait = "0.1.80"
 axum = "0.7.5"
 bytes = "1.6.0"
 config = "0.14.0"
