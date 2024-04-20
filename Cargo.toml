@@ -27,7 +27,7 @@ config = "0.14.0"
 log = "0.4.21"
 mime_guess = "2.0.4"
 minio = "0.1.0"
-thiserror = "1.0.58"
+thiserror = "1.0.59"
 tokio-graceful-shutdown = "0.15.0"
 tracing-log = "0.2.0"
 
