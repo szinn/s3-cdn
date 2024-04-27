@@ -48,7 +48,7 @@ version = "0.12.4"
 features = ["native-tls", "blocking", "rustls-tls", "stream"]
 
 [dependencies.serde]
-version = "1.0.198"
+version = "1.0.199"
 features = ["derive"]
 
 [dependencies.tokio]
