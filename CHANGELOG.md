@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.1] - 2024-05-09
+
+### Bug Fixes
+
+- Groupadd is the command
+
 ## [0.4.0] - 2024-05-09
 
 ### Features
