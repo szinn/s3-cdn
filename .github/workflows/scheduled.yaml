@@ -46,7 +46,7 @@ jobs:
         run: |
           sudo apt-get -qq update && \
           sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4
         with:
           submodules: false
       - name: Install beta
