@@ -21,7 +21,7 @@ jobs:
         run: |
           sudo apt-get -qq update && \
           sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: false
       - name: Install stable
@@ -46,7 +46,7 @@ jobs:
         run: |
           sudo apt-get -qq update && \
           sudo apt-get -qq install --no-install-recommends -y curl unzip gcc g++ git
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           submodules: false
       - name: Install ${{ matrix.toolchain }}
