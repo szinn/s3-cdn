@@ -17,7 +17,7 @@ COPY . .
 RUN cargo build --release --target x86_64-unknown-linux-musl
 RUN strip /build/target/x86_64-unknown-linux-musl/release/s3-cdn
 
-FROM ubuntu:latest@sha256:278628f08d4979fb9af9ead44277dbc9c92c2465922310916ad0c46ec9999295 AS ubuntu
+FROM ubuntu:latest@sha256:80dd3c3b9c6cecb9f1667e9290b3bc61b78c2678c02cbdae5f0fea92cc6734ab AS ubuntu
 RUN groupadd --gid 8779 s3cdn && useradd -g 8779 -M -u 8779 -s /usr/sbin/nologin s3cdn
 RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
 RUN update-ca-certificates
