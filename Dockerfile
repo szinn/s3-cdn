@@ -1,4 +1,4 @@
-FROM ghcr.io/szinn/rust-musl-chef:1.83.0 as chef
+FROM ghcr.io/szinn/rust-musl-chef:1.84.0 as chef
 WORKDIR /build
 
 FROM chef AS planner
