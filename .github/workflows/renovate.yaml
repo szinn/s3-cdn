@@ -13,8 +13,8 @@ on:
         description: "Log-Level"
         default: "debug"
         required: false
-  schedule:
-    - cron: "0 22 * * *"
+  # schedule:
+  #   - cron: "0 22 * * *"
   push:
     branches:
       - main
